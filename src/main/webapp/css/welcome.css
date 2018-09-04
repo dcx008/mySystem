@@ -1,0 +1,242 @@
+
+.main {
+	/*_height: 300px;*/
+	min-height: 300px;
+	position: relative;
+	background-color: #F6F6F5;
+	padding: 20px 50px;
+    overflow: auto;
+
+
+    display: box;              /* OLD - Android 4.4- */
+
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
+    display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+
+
+    /* 09版 */
+    -webkit-box-orient: vertical;
+    /* 12版 */
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    -o-flex-direction: column;
+    flex-direction: column;
+}
+
+.system-notice {
+    /*width: 500px;*/
+    float:left;
+    display: inline;
+
+    -webkit-box-flex: 1;      /* OLD - iOS 6-, Safari 3.1-6 */
+    -moz-box-flex: 1;         /* OLD - Firefox 19- */
+    -webkit-flex: 1;          /* Chrome */
+    -ms-flex: 1;              /* IE 10 */
+    flex: 1;                  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    width: 43%;
+}
+.boyuan-notice {
+    margin-left: 50px;
+    /*width: 500px;*/
+    float:left;
+    display: inline;
+
+    -webkit-box-flex: 1;      /* OLD - iOS 6-, Safari 3.1-6 */
+    -moz-box-flex: 1;         /* OLD - Firefox 19- */
+    -webkit-flex: 1;          /* Chrome */
+    -ms-flex: 1;              /* IE 10 */
+    flex: 1;                  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    width: 43%;
+}
+.todo-list {
+    margin-left: 50px;
+    /*width: 500px;*/
+    float:left;
+    display: inline;
+
+    -webkit-box-flex: 1;      /* OLD - iOS 6-, Safari 3.1-6 */
+    -moz-box-flex: 1;         /* OLD - Firefox 19- */
+    -webkit-flex: 1;          /* Chrome */
+    -ms-flex: 1;              /* IE 10 */
+    flex: 1;                  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    width: 43%;
+}
+.use-offen-menu {
+    width:100%;
+}
+.rss-msg {
+    /*width: 500px;*/
+    float:left;
+    display: inline;
+
+    -webkit-box-flex: 1;      /* OLD - iOS 6-, Safari 3.1-6 */
+    -moz-box-flex: 1;         /* OLD - Firefox 19- */
+    -webkit-flex: 1;          /* Chrome */
+    -ms-flex: 1;              /* IE 10 */
+    flex: 1;                  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+
+    width: 43%;
+}
+
+.hd-dot {
+    height: 26px;
+    background: url(images/bg-home-t_1.png) repeat-x left center;
+    zoom: 1;
+    margin-bottom: 20px;
+    min-width: 230px;
+    /*width: 500px;*/
+}
+.use-offen-menu .hd-dot{
+    margin-bottom: 0px;
+    width: 100%;
+}
+
+.hd-dot .t-system-notice {
+    background: url(images/t-system-notice.png) no-repeat scroll left top;
+}
+
+.hd-dot .t-boyuan-notice {
+    background: url(images/t-boyuan-notice.png) no-repeat scroll left top;
+}
+.hd-dot .t-todo-list {
+    background: url(images/t-todo-list.png) no-repeat scroll left top;
+}
+.hd-dot .t-use-offen-menu {
+    background: url(images/t-use-offen-menu.png) no-repeat scroll left top;
+}
+.hd-dot .t-rss-msg {
+    background: url(images/rssMsg.png) no-repeat scroll left top;
+}
+.hd-dot .t-pend-docs {
+    background: url(images/pendDocs.png) no-repeat scroll left top;
+}
+
+.hd-dot .t {
+    float: left;
+    width: 110px;
+    height: 26px;
+    line-height: 90px;
+    overflow: hidden;
+}
+
+.hd-dot .btn-more-square {
+    float: left;
+}
+
+.btn-more-square {
+    text-align: left;
+    text-indent: 14px;
+    display: inline-block;
+    width: 90px;
+    height: 26px;
+    line-height: 22px;
+    overflow: hidden;
+    background-image: url(images/bg-more.png);
+    background-repeat: no-repeat;
+    vertical-align: top;
+    color: #666;
+    text-decoration: none;
+}
+
+.hd-dot .more-w {
+    float: right;
+    line-height: 26px;
+    width: 90px;
+    padding-left: 5px;
+    background-color: #F6F6F5;
+}
+
+.mod-news-cell {
+    background: #FFF;
+    overflow: hidden;
+    zoom: 1;
+    padding: 10px 0;
+    border-radius: 3px;
+    width: 90%;
+    float: left;
+}
+
+.list-news {
+    padding: 0 20px;
+}
+
+.list-news li {
+    line-height: 36px;
+    overflow: hidden;
+    zoom: 1;
+    background: url(images/dot-blue.png) no-repeat scroll 0px 16px;
+    padding-left: 15px;
+    list-style: none outside;
+    text-align: -webkit-match-parent;
+
+    display: box;              /* OLD - Android 4.4- */
+
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
+    display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+
+.list-news li .dot {
+    display: none;
+}
+
+.list-news li a {
+    font-size: 16px;
+    float: left;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #666;
+    text-decoration: none;
+
+    -webkit-box-flex: 1;      /* OLD - iOS 6-, Safari 3.1-6 */
+    -moz-box-flex: 1;         /* OLD - Firefox 19- */
+    -webkit-flex: 1;          /* Chrome */
+    -ms-flex: 1;              /* IE 10 */
+    flex: 1;                  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+
+.list-news li .d {
+    color: #999;
+    font-size: 11px;
+    font-family: Arial;
+    float: right;
+}
+.list-news-head.head{
+    padding-left: 20px;
+}
+.list-news-head.head li{
+    line-height: 28px;
+    padding: 0 15px;
+    list-style: none outside;
+    display: inline;
+}
+.list-news-head.head li a{
+    color: #0000ff !important;
+    text-decoration: none;
+    font-size: 16px;
+}
+.div-c{
+    width:100%;
+    padding: 10px 0;
+    display: box;              /* OLD - Android 4.4- */
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
+    display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    /* 09版 */
+    -webkit-box-orient: horizontal;
+    /* 12版 */
+    -webkit-flex-direction: row;
+    -moz-flex-direction: row;
+    -ms-flex-direction: row;
+    -o-flex-direction: row;
+    overflow: hidden;
+}

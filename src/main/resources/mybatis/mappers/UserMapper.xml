@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.boyuan.mySystem.mapper.UserMapper">
+
+    <!--配置别名包 否则不生效-->
+    <insert id="addUser">
+        insert into user values(#{userId},#{username},#{password},#{level},#{state},#{verifycode})
+    </insert>
+
+    <select id="checkUsername" resultType="Integer">
+        select count(*) from user where username=#{username}
+    </select>
+
+    <select id="checkUser" resultMap="userRM">
+        select * from user
+        left join
+        user_info
+        on user.user_id=user_info.user_info_id
+        where username=#{username} and password=#{password}
+    </select>
+
+    <resultMap id="userRM" type="User" autoMapping="true">
+        <id column="user_id" property="userId"></id>
+        <association property="userInfo" javaType="UserInfo">
+            <id column="user_info_id" property="userInfoId"></id>
+            <result column="name" property="name"></result>
+            <result column="age" property="age"></result>
+            <result column="gender" property="gender"></result>
+            <result column="address" property="address"></result>
+            <result column="telephone" property="telephone"></result>
+            <result column="email" property="email"></result>
+        </association>
+    </resultMap>
+
+    <select id="findAllUser" resultMap="u1">
+        SELECT * FROM
+        `user`
+        LEFT JOIN
+        user_info
+        on
+        `user`.user_id=user_info.user_info_id
+
+    </select>
+    <resultMap id="u1" type="User" autoMapping="true">
+
+        <id column="user_id" property="userId"/>
+
+        <association property="userInfo" javaType="UserInfo">
+
+            <id column="user_info_id" property="userInfoId"/>
+            <result column="address" property="address"/>
+            <result column="telephone" property="telephone"/>
+            <result column="gender" property="gender"/>
+            <result column="email" property="email"/>
+
+        </association>
+    </resultMap>
+
+    <select id="searchUser" resultMap="u1">
+        SELECT * FROM
+        `user`
+        LEFT JOIN
+        user_info
+        on
+        `user`.user_id=user_info.user_info_id
+        WHERE
+        username LIKE concat(concat('%',#{keyword}),'%')
+        OR address LIKE concat(concat('%',#{keyword}),'%')
+        OR telephone LIKE concat(concat('%',#{keyword}),'%')
+    </select>
+</mapper>
