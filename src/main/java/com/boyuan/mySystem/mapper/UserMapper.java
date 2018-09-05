@@ -37,4 +37,18 @@ public interface UserMapper {
      * @return
      */
     List<User> searchUser(@Param("keyword")String keyword);
+
+    /**
+     * 用户列表分页
+     * @param startIndex
+     * @param pageSize
+     * @return
+     */
+    List<User> findUserListPage(@Param("startIndex")Integer startIndex,@Param("pageSize")Integer pageSize);
+
+    /**
+     * 用户总数
+     * @return
+     */
+    Integer findUserCount();
 }

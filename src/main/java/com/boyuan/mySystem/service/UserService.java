@@ -1,5 +1,6 @@
 package com.boyuan.mySystem.service;
 
+import com.boyuan.mySystem.pojo.Page;
 import com.boyuan.mySystem.pojo.User;
 
 import java.util.List;
@@ -38,4 +39,11 @@ public interface UserService {
      * @return
      */
     List<User> searchUser(String keyword);
+
+    /**
+     * 用户列表分页
+     * @param currentPage
+     * @return
+     */
+    Page findPage(int currentPage);
 }

@@ -9,22 +9,22 @@
 <div class="page-container">
     <div class="text-c">
         <form action="/searchUser" method="post">
-            <input type="text" class="input-text" style="width:250px" placeholder="输入会员名称、电话、邮箱" id="" name="keyword">
-            <button type="submit" name="">搜用户</button>
-        </form>
+        <input type="text" class="input-text" style="width:250px" placeholder="输入会员名称、电话、邮箱" id="" name="keyword">
+        <button type="submit" name="">搜用户</button>
+    </form>
     </div>
     <div class=""> <span class="l"><a href="javascript:;" onclick="" class=""> 批量删除</a> <a href="javascript:;" onclick="" class="">添加用户</a></span> <span class="r">共有数据：<strong></strong> 条</span> </div>
     <div class="mt-20">
-        <table id="table2" style="text-align: center;border:1px solid #ddd;margin: 0;border-left:1px solid #ddd;">
+        <table id="income_table">
             <thead>
             <tr class="table-head" style="padding: 8px">
-                <th width="25"><input type="checkbox" name="all" value=""></th>
-                <th width="80">用户ID</th>
-                <th width="100">用户名</th>
-                <th width="100">用户等级</th>
-                <th width="90">地址</th>
-                <th width="70">电话</th>
-                <th width="100">操作</th>
+                <th width="1.25%"><input type="checkbox" name="all" value=""></th>
+                <th width="1.25%">用户ID</th>
+                <th width="1.25%">用户名</th>
+                <th width="1.25%">用户等级</th>
+                <th width="1.25%">地址</th>
+                <th width="1.25%">电话</th>
+                <th width="1.25%">操作</th>
             </tr>
             </thead>
             <tbody>
@@ -47,6 +47,17 @@
             </tbody>
             <td hidden="hidden">${sum}</td>
         </table>
+    </div>
+</div>
+<div class="pptv_pages" id="pages_box">
+    <div class="pptv_pages">
+        <span><a href="javascript:void(0);" class="prev">上一页</a></span>
+        <span><a href="javascript:void(0);" class="next">下一页</a></span>
+        <select id="select_pages">
+            <option value ="20">20</option>
+            <option value ="50">50</option>
+            <option value="100">100</option>
+        </select>
     </div>
 </div>
 

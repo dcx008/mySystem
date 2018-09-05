@@ -1,5 +1,6 @@
 package com.boyuan.mySystem.controller;
 
+import com.boyuan.mySystem.pojo.Page;
 import com.boyuan.mySystem.pojo.User;
 import com.boyuan.mySystem.service.UserService;
 import org.apache.log4j.LogManager;
@@ -45,10 +46,16 @@ public class UserController {
 
     @RequestMapping("/findUserList")
     //@ResponseBody    //需要页面跳转时，不需要添加该注解
-    public String findUserList(Model model){
+    public String findUserList(Model model,HttpServletRequest request ){
 
-        List<User> userList = userService.findUserList();
-        model.addAttribute("userList",userList);
+        String currentPageStr = request.getParameter("pagenum"); //从网页上获取跳转的页数
+        int currentPage = 1;  //默认显示第一页
+        if(currentPageStr!=null){
+            currentPage = Integer.parseInt(currentPageStr);
+        }
+        Page page = userService.findPage(currentPage);//显示与页码相对应的列表
+        request.setAttribute("page", page);
+        request.setAttribute("userList",page.getList());
         //跳转回用户列表页面
         return "userList";
     }

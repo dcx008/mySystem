@@ -2,6 +2,7 @@ package com.boyuan.mySystem.service.impl;
 
 import com.boyuan.mySystem.mapper.UserInfoMapper;
 import com.boyuan.mySystem.mapper.UserMapper;
+import com.boyuan.mySystem.pojo.Page;
 import com.boyuan.mySystem.pojo.User;
 import com.boyuan.mySystem.pojo.UserInfo;
 import com.boyuan.mySystem.service.UserService;
@@ -52,5 +53,19 @@ public class UserServiceImpl implements UserService {
     @Override
     public List<User> searchUser(String keyword) {
         return userMapper.searchUser(keyword);
+    }
+
+    @Override
+    public Page findPage(int currentPage) {
+
+        Integer sum = userMapper.findUserCount();
+
+        Page page = new Page(currentPage,sum);
+
+        List<User> list = userMapper.findUserListPage(page.getStartIndex(),page.getPageSize());
+
+        page.setList(list);
+
+        return page;
     }
 }

@@ -1,5 +1,12 @@
-.table th, .table td {
+.income_box{max-height: 581px;min-height:30px;_height:581px;height:581px;overflow: hidden;position: relative;margin:0 auto;width:795px;}
+.colgroup1,.colgroup2{width:15%;}
+.colgroup3,.colgroup4,.colgroup5,.colgroup6{width:14%;}
+.income_table{position: absolute;top:0;left:0;}
+.pptv_pages .pages{display:inline-block;top:20px;padding:4px 0;height:38px;overflow: hidden;position: relative;}
+.pptv_pages .inner_pages{display:inline-block;position: absolute;top:12px;left:0;height: 38px;}
+
+table td {
     padding: 8px;
     line-height: 20px;
-    word-break: break-all;
+    text-align: center;
 }
