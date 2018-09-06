@@ -56,13 +56,13 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public Page findPage(int currentPage) {
+    public Page findPage(int currentPage,int currentPageSize) {
 
         Integer sum = userMapper.findUserCount();
 
-        Page page = new Page(currentPage,sum);
+        Page page = new Page(currentPage,sum,currentPageSize);
 
-        List<User> list = userMapper.findUserListPage(page.getStartIndex(),page.getPageSize());
+        List<User> list = userMapper.findUserListPage(page.getStartIndex(),currentPageSize);
 
         page.setList(list);
 

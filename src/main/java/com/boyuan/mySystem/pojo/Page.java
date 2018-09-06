@@ -21,6 +21,14 @@ public class Page {
         this.startIndex = (currentPage-1)*pageSize;
     }
 
+    public Page(Integer currentPage,Integer totalRecords,Integer pageSize){
+        this.currentPage = currentPage;
+        this.totalRecords = totalRecords;
+        this.pageSize = pageSize;
+        this.totalPages = (totalRecords%pageSize==0?  totalRecords/pageSize : totalRecords/pageSize+1);
+        this.startIndex = (currentPage-1)*pageSize;
+    }
+
     public Integer getTotalRecords() {
         return totalRecords;
     }

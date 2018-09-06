@@ -45,5 +45,5 @@ public interface UserService {
      * @param currentPage
      * @return
      */
-    Page findPage(int currentPage);
+    Page findPage(int currentPage,int currentPageSize);
 }

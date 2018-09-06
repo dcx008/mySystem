@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.imageio.ImageIO;
 import javax.servlet.http.HttpServletRequest;
@@ -49,13 +50,36 @@ public class UserController {
     public String findUserList(Model model,HttpServletRequest request ){
 
         String currentPageStr = request.getParameter("pagenum"); //从网页上获取跳转的页数
+        String currentPageSizeStr = request.getParameter("pagesize");
         int currentPage = 1;  //默认显示第一页
+        int currentPageSize = 3;
         if(currentPageStr!=null){
             currentPage = Integer.parseInt(currentPageStr);
         }
-        Page page = userService.findPage(currentPage);//显示与页码相对应的列表
+        if(currentPageSizeStr!=null){
+            currentPageSize = Integer.parseInt(currentPageSizeStr);
+        }
+        Page page = userService.findPage(currentPage,currentPageSize);//显示与页码相对应的列表
         request.setAttribute("page", page);
-        request.setAttribute("userList",page.getList());
+        //跳转回用户列表页面
+        return "userList";
+    }
+    @RequestMapping("/findUserList2")
+    @ResponseBody    //需要页面跳转时，不需要添加该注解
+    public String findUserList2(Model model,HttpServletRequest request ){
+
+        String currentPageStr = request.getParameter("pagenum"); //从网页上获取跳转的页数
+        String currentPageSizeStr = request.getParameter("pagesize");
+        int currentPage = 1;  //默认显示第一页
+        int currentPageSize = 3;
+        if(currentPageStr!=null){
+            currentPage = Integer.parseInt(currentPageStr);
+        }
+        if(currentPageSizeStr!=null){
+            currentPageSize = Integer.parseInt(currentPageSizeStr);
+        }
+        Page page = userService.findPage(currentPage,currentPageSize);//显示与页码相对应的列表
+        request.setAttribute("page", page);
         //跳转回用户列表页面
         return "userList";
     }
