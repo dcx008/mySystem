@@ -9,8 +9,6 @@
         <element id="directory" name="lib">
           <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter-web:1.5.7.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter:1.5.7.RELEASE" />
-          <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot:1.5.7.RELEASE" />
-          <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-autoconfigure:1.5.7.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter-logging:1.5.7.RELEASE" />
           <element id="library" level="project" name="Maven: ch.qos.logback:logback-classic:1.1.11" />
           <element id="library" level="project" name="Maven: ch.qos.logback:logback-core:1.1.11" />
@@ -29,6 +27,8 @@
           <element id="library" level="project" name="Maven: org.springframework:spring-webmvc:4.3.11.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-expression:4.3.11.RELEASE" />
           <element id="library" level="project" name="Maven: com.hynnet:yeepay-hmac-md5-api:1.0.0" />
+          <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot:1.5.7.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-autoconfigure:1.5.7.RELEASE" />
           <element id="library" level="project" name="Maven: org.apache.shiro:shiro-all:1.2.3" />
           <element id="library" level="project" name="Maven: org.apache.shiro:shiro-guice:1.2.3" />
           <element id="library" level="project" name="Maven: com.google.guava:guava:r09" />

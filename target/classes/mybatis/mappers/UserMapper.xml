@@ -13,6 +13,19 @@
         select count(*) from user where username=#{username}
     </select>
 
+    <select id="findUserListPage" resultMap="userRM">
+        select * from user
+         left join
+        user_info
+        on user.user_id=user_info.user_info_id
+        limit #{startIndex},#{pageSize}
+    </select>
+
+    <select id="findUserCount" resultType="Integer">
+        select count(*) from user
+    </select>
+
+
     <select id="checkUser" resultMap="userRM">
         select * from user
         left join
